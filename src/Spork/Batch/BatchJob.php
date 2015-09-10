@@ -96,7 +96,7 @@ class BatchJob
             $exitStatus = $fork->getExitStatus();
             if (0 !== $exitStatus) {
                 // Propagate erroneous state
-                die($exitStatus);
+                exit($exitStatus);
             }
             $results = array_merge($results, (array) $fork->getResult());
         }
